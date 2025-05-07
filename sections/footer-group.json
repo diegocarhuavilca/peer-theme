@@ -13,6 +13,17 @@
   "sections": {
     "footer": {
       "type": "footer",
+      "blocks": {
+        "brand_information_YTtYfG": {
+          "type": "brand_information",
+          "settings": {
+            "show_social": true
+          }
+        }
+      },
+      "block_order": [
+        "brand_information_YTtYfG"
+      ],
       "settings": {
         "color_scheme": "scheme-1",
         "newsletter_enable": false,
@@ -20,7 +31,7 @@
         "enable_follow_on_shop": true,
         "show_social": true,
         "enable_country_selector": true,
-        "enable_language_selector": true,
+        "enable_language_selector": false,
         "payment_enable": false,
         "show_policy": true,
         "margin_top": 0,
