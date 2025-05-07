@@ -46,9 +46,30 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "hero_slider_AQJtzG": {
+      "type": "hero-slider",
+      "blocks": {
+        "slide_z9nJy7": {
+          "type": "slide",
+          "settings": {
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/d83955bf0ba64e23a882c9d9d338db64.mp4",
+            "heading": "Your Slide Title",
+            "subheading": "Your slide description",
+            "button_link": "",
+            "button_label": "Shop Now"
+          }
+        }
+      },
+      "block_order": [
+        "slide_z9nJy7"
+      ],
+      "name": "Hero Slider",
+      "settings": {}
     }
   },
   "order": [
-    "collage_8U69cP"
+    "collage_8U69cP",
+    "hero_slider_AQJtzG"
   ]
 }
