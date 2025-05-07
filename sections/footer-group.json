@@ -13,17 +13,6 @@
   "sections": {
     "footer": {
       "type": "footer",
-      "blocks": {
-        "brand_information_YTtYfG": {
-          "type": "brand_information",
-          "settings": {
-            "show_social": true
-          }
-        }
-      },
-      "block_order": [
-        "brand_information_YTtYfG"
-      ],
       "settings": {
         "color_scheme": "scheme-1",
         "newsletter_enable": false,
