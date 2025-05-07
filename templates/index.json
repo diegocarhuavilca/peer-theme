@@ -27,7 +27,7 @@
         "slide_z9nJy7"
       ],
       "custom_css": [
-        ".hero-slider {margin-top: -80px;}",
+        ".hero-slider {margin-top: -82px;}",
         ".hero-slider .swiper-slide {height: calc(100vh - 50px); overflow: hidden;}",
         ".hero-slider .swiper-slide video {height: calc(100vh - 50px);}"
       ],
