@@ -4,7 +4,7 @@
       <div class="swiper-slide relative">
         {% assign video_url = block.settings.video_url %}
         {% if video_url contains '.mp4' %}
-          <video autoplay muted loop playsinline class="w-full h-full object-cover">
+          <video autoplay muted loop playsinline class="w-full h-full object-cover" style="width:100%;object-fit:cover">
             <source src="{{ video_url }}" type="video/mp4">
           </video>
         {% elsif video_url contains 'youtube.com' or video_url contains 'vimeo.com' %}
