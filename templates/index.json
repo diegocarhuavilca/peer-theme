@@ -9,44 +9,6 @@
  */
 {
   "sections": {
-    "collage_8U69cP": {
-      "type": "collage",
-      "blocks": {
-        "image_dE77Mr": {
-          "type": "image",
-          "settings": {}
-        },
-        "product_UHFfrd": {
-          "type": "product",
-          "settings": {
-            "product": "",
-            "second_image": false
-          }
-        },
-        "collection_aQJeF9": {
-          "type": "collection",
-          "settings": {
-            "collection": ""
-          }
-        }
-      },
-      "block_order": [
-        "image_dE77Mr",
-        "product_UHFfrd",
-        "collection_aQJeF9"
-      ],
-      "name": "t:sections.collage.presets.name",
-      "settings": {
-        "heading": "Collage multimedia",
-        "heading_size": "h1",
-        "desktop_layout": "left",
-        "mobile_layout": "column",
-        "card_styles": "product-card-wrapper",
-        "color_scheme": "",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
     "hero_slider_AQJtzG": {
       "type": "hero-slider",
       "blocks": {
@@ -54,22 +16,26 @@
           "type": "slide",
           "settings": {
             "video_url": "https://cdn.shopify.com/videos/c/o/v/d83955bf0ba64e23a882c9d9d338db64.mp4",
-            "heading": "Your Slide Title",
-            "subheading": "Your slide description",
+            "heading": "",
+            "subheading": "",
             "button_link": "",
-            "button_label": "Shop Now"
+            "button_label": ""
           }
         }
       },
       "block_order": [
         "slide_z9nJy7"
       ],
+      "custom_css": [
+        ".hero-slider {margin-top: -80px;}",
+        ".hero-slider .swiper-slide {height: calc(100vh - 50px); overflow: hidden;}",
+        ".hero-slider .swiper-slide video {height: calc(100vh - 50px);}"
+      ],
       "name": "Hero Slider",
       "settings": {}
     }
   },
   "order": [
-    "collage_8U69cP",
     "hero_slider_AQJtzG"
   ]
 }
