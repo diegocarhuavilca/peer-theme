@@ -62,7 +62,8 @@
         "column_VHF6Dg"
       ],
       "custom_css": [
-        ".multicolumn-card__image-wrapper{padding: 0;}"
+        ".multicolumn-card__image-wrapper {padding: 0;}",
+        " .background-none .multicolumn-card__image-wrapper{margin: 0; }"
       ],
       "name": "t:sections.multicolumn.presets.name",
       "settings": {
