@@ -61,6 +61,9 @@
         "column_iVmrkx",
         "column_VHF6Dg"
       ],
+      "custom_css": [
+        ".multicolumn-card__image-wrapper{padding: 0;}"
+      ],
       "name": "t:sections.multicolumn.presets.name",
       "settings": {
         "title": "",
