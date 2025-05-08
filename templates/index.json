@@ -36,7 +36,7 @@
     "two_image_hero_6cbkyW": {
       "type": "two-image-hero",
       "custom_css": [
-        ".image-button{margin-left: auto;margin-right: auto;left: 0;right: 0;}"
+        ".image-button {margin-left: auto; margin-right: auto; left: 0; right: 0; width: fit-content;}"
       ],
       "name": "Fullscreen Double Image",
       "settings": {
