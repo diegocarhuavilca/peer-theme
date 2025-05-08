@@ -25,13 +25,17 @@
   }
   @media (min-width: 768px) {
     .fullscreen-double-image .image-container {
+      display: flex;
       flex-direction: row;
+    }
+
+    .image-block {
+      flex: auto;
     }
   }
   .image-block {
     background-size: cover;
     background-position: center;
-    flex: 1;
     height: 100vh;
     position: relative;
   }
