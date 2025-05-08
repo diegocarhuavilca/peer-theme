@@ -65,6 +65,21 @@
   }
 </style>
 
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.image-block').forEach((block) => {
+      block.addEventListener('click', function (e) {
+        const link = this.getAttribute('data-link');
+        const isButtonClick = e.target.closest('.image-button');
+
+        if (!isButtonClick && link) {
+          window.location.href = link;
+        }
+      });
+    });
+  });
+</script>
+
 {% schema %}
 {
   "name": "Fullscreen Double Image",
