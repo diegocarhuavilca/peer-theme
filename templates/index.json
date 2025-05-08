@@ -35,6 +35,9 @@
     },
     "two_image_hero_6cbkyW": {
       "type": "two-image-hero",
+      "custom_css": [
+        ".image-button{margin-left: auto;margin-right: auto;left: 0;right: 0;}"
+      ],
       "name": "Fullscreen Double Image",
       "settings": {
         "image_1": "shopify://shop_images/hands-lay-on-a-brown-leather-bag-on-a-persons-lap.jpg",
