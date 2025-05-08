@@ -1,0 +1,96 @@
+<section class="fullscreen-double-image">
+  <div class="image-container">
+    {% if section.settings.image_1 %}
+      <div class="image-block" style="background-image: url({{ section.settings.image_1 | image_url: width: 1600 }});">
+        {% if section.settings.button_text_1 != blank %}
+          <a href="{{ section.settings.button_link_1 }}" class="image-button">{{ section.settings.button_text_1 }}</a>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    {% if section.settings.image_2 %}
+      <div class="image-block" style="background-image: url({{ section.settings.image_2 | image_url: width: 1600 }});">
+        {% if section.settings.button_text_2 != blank %}
+          <a href="{{ section.settings.button_link_2 }}" class="image-button">{{ section.settings.button_text_2 }}</a>
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+<style>
+  .fullscreen-double-image .image-container {
+    display: flex;
+    flex-direction: column;
+  }
+  @media (min-width: 768px) {
+    .fullscreen-double-image .image-container {
+      flex-direction: row;
+    }
+  }
+  .image-block {
+    background-size: cover;
+    background-position: center;
+    flex: 1;
+    height: 100vh;
+    position: relative;
+  }
+  .image-button {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    padding: 12px 24px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: background 0.3s;
+  }
+  .image-button:hover {
+    background: rgba(0, 0, 0, 0.8);
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Fullscreen Double Image",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image_1",
+      "label": "First Image"
+    },
+    {
+      "type": "text",
+      "id": "button_text_1",
+      "label": "Button Text 1"
+    },
+    {
+      "type": "url",
+      "id": "button_link_1",
+      "label": "Button Link 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_2",
+      "label": "Second Image"
+    },
+    {
+      "type": "text",
+      "id": "button_text_2",
+      "label": "Button Text 2"
+    },
+    {
+      "type": "url",
+      "id": "button_link_2",
+      "label": "Button Link 2"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Fullscreen Double Image"
+    }
+  ]
+}
+{% endschema %}
