@@ -32,9 +32,56 @@
       ],
       "name": "Hero Slider",
       "settings": {}
+    },
+    "multicolumn_eXPa3G": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_iVmrkx": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/hands-lay-on-a-brown-leather-bag-on-a-persons-lap.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_VHF6Dg": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/1038133-02-01-Bolso-shopping.webp",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_iVmrkx",
+        "column_VHF6Dg"
+      ],
+      "name": "t:sections.multicolumn.presets.name",
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "button_label": "",
+        "button_link": "",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "background_style": "none",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
     }
   },
   "order": [
-    "hero_slider_AQJtzG"
+    "hero_slider_AQJtzG",
+    "multicolumn_eXPa3G"
   ]
 }
