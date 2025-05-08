@@ -1,7 +1,11 @@
 <section class="fullscreen-double-image">
   <div class="image-container">
     {% if section.settings.image_1 %}
-      <div class="image-block" style="background-image: url({{ section.settings.image_1 | image_url: width: 1600 }});">
+      <div
+        class="image-block"
+        data-link="{{ section.settings.button_link_1 }}"
+        style="background-image: url({{ section.settings.image_1 | image_url: width: 1600 }});"
+      >
         {% if section.settings.button_text_1 != blank %}
           <a href="{{ section.settings.button_link_1 }}" class="image-button">{{ section.settings.button_text_1 }}</a>
         {% endif %}
@@ -9,7 +13,11 @@
     {% endif %}
 
     {% if section.settings.image_2 %}
-      <div class="image-block" style="background-image: url({{ section.settings.image_2 | image_url: width: 1600 }});">
+      <div
+        class="image-block"
+        data-link="{{ section.settings.button_link_2 }}"
+        style="background-image: url({{ section.settings.image_2 | image_url: width: 1600 }});"
+      >
         {% if section.settings.button_text_2 != blank %}
           <a href="{{ section.settings.button_link_2 }}" class="image-button">{{ section.settings.button_text_2 }}</a>
         {% endif %}
@@ -36,6 +44,7 @@
   .image-block {
     background-size: cover;
     background-position: center;
+    cursor: pointer;
     height: 100vh;
     position: relative;
   }
