@@ -32,9 +32,22 @@
       ],
       "name": "Hero Slider",
       "settings": {}
+    },
+    "two_image_hero_6cbkyW": {
+      "type": "two-image-hero",
+      "name": "Fullscreen Double Image",
+      "settings": {
+        "image_1": "shopify://shop_images/hands-lay-on-a-brown-leather-bag-on-a-persons-lap.jpg",
+        "button_text_1": "asd",
+        "button_link_1": "",
+        "image_2": "shopify://shop_images/1038133-02-02-Bolso-shopping.webp",
+        "button_text_2": "asd",
+        "button_link_2": ""
+      }
     }
   },
   "order": [
-    "hero_slider_AQJtzG"
+    "hero_slider_AQJtzG",
+    "two_image_hero_6cbkyW"
   ]
 }
