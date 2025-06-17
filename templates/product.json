@@ -98,8 +98,7 @@
       ],
       "custom_css": [
         ".product-media-container {border: none;}",
-        ".thumbnail.global-media-settings.global-media-settings--no-shadow {border: none; box-shadow: none;}",
-        ".product__media{height: 500px;}"
+        ".thumbnail.global-media-settings.global-media-settings--no-shadow {border: none; box-shadow: none;}"
       ],
       "settings": {
         "enable_sticky_info": true,
