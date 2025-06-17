@@ -37,15 +37,12 @@
     "main": {
       "type": "main-product",
       "blocks": {
-        "vendor": {
-          "type": "text",
-          "settings": {
-            "text": "{{ product.vendor }}",
-            "text_style": "uppercase"
-          }
-        },
         "title": {
           "type": "title",
+          "settings": {}
+        },
+        "description": {
+          "type": "description",
           "settings": {}
         },
         "price": {
@@ -70,10 +67,6 @@
             "show_gift_card_recipient": false
           }
         },
-        "description": {
-          "type": "description",
-          "settings": {}
-        },
         "share": {
           "type": "share",
           "settings": {
@@ -86,20 +79,21 @@
         }
       },
       "block_order": [
-        "vendor",
         "title",
+        "description",
         "price",
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
-        "description",
         "share",
         "judge_me_reviews_preview_badge_CwwXVn"
       ],
       "custom_css": [
         ".product-media-container {border: none;}",
         ".thumbnail.global-media-settings.global-media-settings--no-shadow {border: none; box-shadow: none;}",
-        ".product__description {word-wrap: break-word;}"
+        ".product__description {word-wrap: break-word; font-size: 12px; margin-top: 10px;}",
+        ".product__title h1 {font-size: 16px;}",
+        ".product__title {margin: 0;}"
       ],
       "settings": {
         "enable_sticky_info": true,
