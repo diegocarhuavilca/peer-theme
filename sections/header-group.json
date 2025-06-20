@@ -25,6 +25,9 @@
       "block_order": [
         "announcement-bar-0"
       ],
+      "custom_css": [
+        ".utility-bar {background-color: rgb(51, 51, 51);}"
+      ],
       "settings": {
         "auto_rotate": false,
         "change_slides_speed": 5,
