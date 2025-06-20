@@ -53,7 +53,7 @@
           "type": "variant_picker",
           "settings": {
             "picker_type": "button",
-            "swatch_shape": "circle"
+            "swatch_shape": "square"
           }
         },
         "quantity_selector": {
@@ -94,7 +94,7 @@
         ".product__description {word-wrap: break-word; font-size: 12px; margin-top: 10px;}",
         ".product__title h1 {font-size: 16px;}",
         ".product__title {margin: 0;}",
-        ".price-item--regular{font-size: 16px;}"
+        ".price-item--regular {font-size: 16px;}"
       ],
       "settings": {
         "enable_sticky_info": true,
