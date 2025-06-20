@@ -94,7 +94,9 @@
         ".product__description {word-wrap: break-word; font-size: 12px; margin-top: 10px;}",
         ".product__title h1 {font-size: 16px;}",
         ".product__title {margin: 0;}",
-        ".price-item--regular {font-size: 16px;}"
+        ".price-item--regular {font-size: 16px;}",
+        ".swatch-input__label {width: 25px;}",
+        ".form__label {font-size: 14px; font-weight: bold;}"
       ],
       "settings": {
         "enable_sticky_info": true,
