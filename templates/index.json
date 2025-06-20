@@ -51,7 +51,7 @@
       "type": "featured-collection",
       "name": "t:sections.featured-collection.presets.name",
       "settings": {
-        "collection": "frontpage",
+        "collection": "bolsos-de-cuero-sade-bags",
         "products_to_show": 3,
         "title": "",
         "heading_size": "h1",
