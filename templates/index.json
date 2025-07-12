@@ -22,25 +22,13 @@
             "button_link": "",
             "button_label": ""
           }
-        },
-        "slide_TbgXwV": {
-          "type": "slide",
-          "settings": {
-            "video_url": "",
-            "heading": "Your Slide Title",
-            "subheading": "Your slide description",
-            "button_link": "",
-            "button_label": "Shop Now"
-          }
         }
       },
       "block_order": [
-        "slide_z9nJy7",
-        "slide_TbgXwV"
+        "slide_z9nJy7"
       ],
       "custom_css": [
-        ".hero-slider {margin-top: -82px;}",
-        ".hero-slider .swiper-slide video {height: calc(100vh - 40px);}"
+        ".hero-slider {margin-top: -65px;}"
       ],
       "name": "Hero Slider",
       "settings": {}
