@@ -143,7 +143,7 @@
       "type": "custom-liquid",
       "name": "t:sections.custom-liquid.presets.name",
       "settings": {
-        "custom_liquid": "<div class=\"collage-images-grid\">\n{{product.metafields.custom.collage}}\n  {% for file in product.metafields.custom.collage.value %}\n    {{file}}\n  {% endfor %}\n</div>",
+        "custom_liquid": "<div class=\"collage-images-grid\">\n  {% for file in product.metafields.custom.collage.value %}\n <img src=\"{{file}}\" alt=\"{{ product.title }} additional image\">    {{file}}\n  {% endfor %}\n</div>\n\n{% if product.metafields.additional.image.value != blank %}\n \n{% endif %}",
         "color_scheme": "",
         "padding_top": 40,
         "padding_bottom": 52
