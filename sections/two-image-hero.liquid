@@ -3,9 +3,9 @@
     {% if section.settings.image_1 %}
       <div
         class="image-block"
-        data-link="{{ section.settings.button_link_1 }}"
         style="background-image: url({{ section.settings.image_1 | image_url: width: 1600 }});"
       >
+        <a href="{{ section.settings.image_1 | image_url: width: 2048 }}" data-lightbox="gallery" class="image-lightbox-trigger"></a>
         {% if section.settings.button_text_1 != blank %}
           <a href="{{ section.settings.button_link_1 }}" class="image-button">{{ section.settings.button_text_1 }}</a>
         {% endif %}
@@ -15,9 +15,9 @@
     {% if section.settings.image_2 %}
       <div
         class="image-block"
-        data-link="{{ section.settings.button_link_2 }}"
         style="background-image: url({{ section.settings.image_2 | image_url: width: 1600 }});"
       >
+        <a href="{{ section.settings.image_2 | image_url: width: 2048 }}" data-lightbox="gallery" class="image-lightbox-trigger"></a>
         {% if section.settings.button_text_2 != blank %}
           <a href="{{ section.settings.button_link_2 }}" class="image-button">{{ section.settings.button_text_2 }}</a>
         {% endif %}
@@ -44,9 +44,18 @@
   .image-block {
     background-size: cover;
     background-position: center;
-    cursor: pointer;
+    cursor: pointer; /* Mantener el cursor de puntero */
     height: 100vh;
     position: relative;
+  }
+  /* Estilos para el nuevo enlace que activa el lightbox */
+  .image-lightbox-trigger {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10; /* Asegurar que esté por encima de la imagen pero debajo del botón */
   }
   .image-button {
     position: absolute;
@@ -59,6 +68,7 @@
     border-radius: 6px;
     font-size: 16px;
     transition: background 0.3s;
+    z-index: 20; /* Asegurar que el botón esté por encima del trigger del lightbox */
   }
   .image-button:hover {
     background: rgba(0, 0, 0, 0.8);
@@ -66,18 +76,11 @@
 </style>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    document.querySelectorAll('.image-block').forEach((block) => {
-      block.addEventListener('click', function (e) {
-        const link = this.getAttribute('data-link');
-        const isButtonClick = e.target.closest('.image-button');
-
-        if (!isButtonClick && link) {
-          window.location.href = link;
-        }
-      });
-    });
-  });
+  // No necesitamos el JavaScript anterior para el clic general, ya que el <a> tag lo manejará.
+  // El script del tema de Shopify que maneja el Lightbox se encargará de esto.
+  // Si tu tema usa una biblioteca específica (e.g., PhotoSwipe, Fancybox),
+  // asegúrate de que el atributo 'data-lightbox' (o similar) coincida con lo que tu tema espera.
+  // 'data-lightbox="gallery"' es un ejemplo común. Algunos temas usan 'data-fancybox', etc.
 </script>
 
 {% schema %}
@@ -87,37 +90,37 @@
     {
       "type": "image_picker",
       "id": "image_1",
-      "label": "First Image"
+      "label": "Primera Imagen"
     },
     {
       "type": "text",
       "id": "button_text_1",
-      "label": "Button Text 1"
+      "label": "Texto del Botón 1"
     },
     {
       "type": "url",
       "id": "button_link_1",
-      "label": "Button Link 1"
+      "label": "Enlace del Botón 1"
     },
     {
       "type": "image_picker",
       "id": "image_2",
-      "label": "Second Image"
+      "label": "Segunda Imagen"
     },
     {
       "type": "text",
       "id": "button_text_2",
-      "label": "Button Text 2"
+      "label": "Texto del Botón 2"
     },
     {
       "type": "url",
       "id": "button_link_2",
-      "label": "Button Link 2"
+      "label": "Enlace del Botón 2"
     }
   ],
   "presets": [
     {
-      "name": "Fullscreen Double Image"
+      "name": "Imágenes Dobles en Pantalla Completa"
     }
   ]
 }
