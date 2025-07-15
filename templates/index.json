@@ -67,17 +67,6 @@
     },
     "175261604720c2c685": {
       "type": "apps",
-      "blocks": {
-        "powr_photo_gallery_app_block_36eU6f": {
-          "type": "shopify://apps/powr-photo-gallery/blocks/app-block/f518ea8b-84ca-4e35-ad08-915944558a92",
-          "settings": {
-            "app_id": "90603473_1752616045"
-          }
-        }
-      },
-      "block_order": [
-        "powr_photo_gallery_app_block_36eU6f"
-      ],
       "settings": {
         "include_margins": true
       }
