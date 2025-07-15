@@ -110,25 +110,10 @@
         "padding_bottom": 0
       }
     },
-    "two_image_hero_xng4nN": {
-      "type": "two-image-hero",
-      "name": "Fullscreen Double Image",
-      "settings": {
-        "button_text_1": "",
-        "button_link_1": "",
-        "button_text_2": "",
-        "button_link_2": ""
-      }
-    },
     "two_image_hero_hbzpbb": {
       "type": "two-image-hero",
       "name": "Fullscreen Double Image",
-      "settings": {
-        "button_text_1": "",
-        "button_link_1": "",
-        "button_text_2": "",
-        "button_link_2": ""
-      }
+      "settings": {}
     },
     "featured_collection_mk3XAm": {
       "type": "featured-collection",
@@ -164,7 +149,6 @@
     "related-products",
     "174682019332477b9c",
     "main",
-    "two_image_hero_xng4nN",
     "two_image_hero_hbzpbb",
     "featured_collection_mk3XAm"
   ]
