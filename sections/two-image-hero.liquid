@@ -1,9 +1,3 @@
-{% comment %}
-  Liquid component for displaying images from the "Collage Fotos" metafield.
-  Assumes the metafield `product.metafields.custom.collage_fotos`
-  stores an array of file objects or image URLs.
-{% endcomment %}
-
 <div class="collage-fotos-viewer">
   {% if product.metafields.custom.collage_fotos.value %}
     <h2>Collage de Fotos</h2>
@@ -11,11 +5,6 @@
       {% for item in product.metafields.custom.collage_fotos.value %}
         {% assign image_url = '' %}
         {% assign image_alt = 'Collage image' %}
-
-        {% comment %}
-          Check if the item is a file object (e.g., from a file upload metafield)
-          or directly an image URL.
-        {% endcomment %}
         {% if item.src %}
           {% assign image_url = item.src | img_url: '1024x' %} {# Adjust size as needed #}
           {% if item.alt %}
@@ -24,7 +13,6 @@
         {% elsif item contains 'http' or item contains '/' %}
           {% assign image_url = item | img_url: '1024x' %} {# Adjust size as needed #}
         {% endif %}
-
         {% if image_url != '' %}
           <div class="image-item">
             <img src="{{ image_url }}" alt="{{ image_alt }}" loading="lazy">
