@@ -79,18 +79,11 @@
           "settings": {
             "image": "shopify://shop_images/CARTERA_SADE_VINO_MODELO_FRONTAL.png"
           }
-        },
-        "image_EUeVw6": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/CARTERA_SADE_MARFIL_MODELO_FRONTAL_BRILLO.png"
-          }
         }
       },
       "block_order": [
         "image_njtLmp",
-        "image_KXVG6Q",
-        "image_EUeVw6"
+        "image_KXVG6Q"
       ],
       "custom_css": [
         ".collage {row-gap: 0; column-gap: 0; grid-template-columns: repeat(2, minmax(0px, 1fr));}"
