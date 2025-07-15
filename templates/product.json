@@ -114,10 +114,10 @@
       "type": "two-image-hero",
       "name": "Fullscreen Double Image",
       "settings": {
-        "image_1": "shopify://shop_images/Pro-Capture_One_1226_2_1.png",
+        "image_1": "shopify://shop_images/CARTERA_SADE_MARFIL_MODELO_FRONTAL_BRILLO.png",
         "button_text_1": "",
         "button_link_1": "",
-        "image_2": "shopify://shop_images/Pro-Capture_One_1089_1.png",
+        "image_2": "shopify://shop_images/CARTERA_SADE_MARFIL_MODELO_ESPALDA.png",
         "button_text_2": "",
         "button_link_2": ""
       }
@@ -126,10 +126,10 @@
       "type": "two-image-hero",
       "name": "Fullscreen Double Image",
       "settings": {
-        "image_1": "shopify://shop_images/Pro-Capture_One_0432_1.png",
+        "image_1": "shopify://shop_images/CARTERA_SADE_MARFIL_MODELO_FRONTAL.png",
         "button_text_1": "",
         "button_link_1": "",
-        "image_2": "shopify://shop_images/Pro-Capture_One_0471_1_1.png",
+        "image_2": "shopify://shop_images/CARTERA_SADE_MARFIL_MODELO_LATERAL.png",
         "button_text_2": "",
         "button_link_2": ""
       }
