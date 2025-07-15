@@ -92,6 +92,9 @@
         "image_KXVG6Q",
         "image_EUeVw6"
       ],
+      "custom_css": [
+        ".collage {row-gap: 0; column-gap: 0; grid-template-columns: repeat(2, minmax(0px, 1fr));}"
+      ],
       "name": "t:sections.collage.presets.name",
       "settings": {
         "heading": "",
