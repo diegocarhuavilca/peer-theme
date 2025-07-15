@@ -72,14 +72,14 @@
           "type": "slide",
           "settings": {
             "image_overlay_opacity": 0,
-            "heading": "Diapositiva de imagen",
-            "heading_size": "h1",
-            "subheading": "Cuenta la historia de tu marca a través de imágenes",
+            "heading": "",
+            "heading_size": "h2",
+            "subheading": "",
             "button_label": "Etiqueta de botón",
             "link": "",
-            "button_style_secondary": false,
+            "button_style_secondary": true,
             "show_text_box": true,
-            "box_align": "middle-center",
+            "box_align": "bottom-center",
             "text_alignment": "center",
             "text_alignment_mobile": "center",
             "color_scheme": ""
@@ -108,7 +108,8 @@
         "slide_xYttiG"
       ],
       "custom_css": [
-        ".slideshow__controls {display: none;}"
+        ".slideshow__controls {display: none;}",
+        ".banner__box{background: transparent;}"
       ],
       "name": "t:sections.slideshow.presets.name",
       "settings": {
