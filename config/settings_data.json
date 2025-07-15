@@ -112,7 +112,7 @@
     "brand_image": "{{ shop.brand.logo }}",
     "brand_image_width": 100,
     "social_facebook_link": "",
-    "social_instagram_link": "https://www.instagram.com/peerthebrand",
+    "social_instagram_link": "https://www.instagram.com/peer___________",
     "social_youtube_link": "",
     "social_tiktok_link": "https://www.tiktok.com/@peer.thebrand",
     "social_twitter_link": "",
@@ -163,6 +163,11 @@
           "button_vertical_position": "higher",
           "greeting_message": ""
         }
+      },
+      "13057208362758823054": {
+        "type": "shopify://apps/powr-photo-gallery/blocks/app-embed/f518ea8b-84ca-4e35-ad08-915944558a92",
+        "disabled": false,
+        "settings": {}
       }
     },
     "color_schemes": {
