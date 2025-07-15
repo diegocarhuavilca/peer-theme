@@ -25,15 +25,15 @@
           >
         {% endif %}
 
-        <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center text-center p-8 text-white">
-          <h2 class="text-4xl font-bold">{{ block.settings.heading }}</h2>
-          <p class="mt-2 text-lg">{{ block.settings.subheading }}</p>
-          {% if block.settings.button_link %}
-            <a href="{{ block.settings.button_link }}" class="mt-4 inline-block bg-white text-black px-6 py-2 rounded">
-              {{ block.settings.button_label }}
-            </a>
-          {% endif %}
-        </div>
+        <div style="position: absolute; inset: 0; background-color: rgba(0, 0, 0, 0.5); display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 2rem; color: white;">
+  <h2 style="font-size: 2.25rem; font-weight: 700;">{{ block.settings.heading }}</h2>
+  <p style="margin-top: 0.5rem; font-size: 1.125rem;">{{ block.settings.subheading }}</p>
+  {% if block.settings.button_link %}
+    <a href="{{ block.settings.button_link }}" style="margin-top: 1rem; display: inline-block; background-color: white; color: black; padding: 0.5rem 1.5rem; border-radius: 0.25rem;">
+      {{ block.settings.button_label }}
+    </a>
+  {% endif %}
+</div>
       </div>
     {% endfor %}
   </div>
