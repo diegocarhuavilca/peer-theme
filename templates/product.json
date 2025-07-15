@@ -110,6 +110,30 @@
         "padding_bottom": 0
       }
     },
+    "two_image_hero_xng4nN": {
+      "type": "two-image-hero",
+      "name": "Fullscreen Double Image",
+      "settings": {
+        "image_1": "shopify://shop_images/Pro-Capture_One_1226_2_1.png",
+        "button_text_1": "",
+        "button_link_1": "",
+        "image_2": "shopify://shop_images/Pro-Capture_One_1089_1.png",
+        "button_text_2": "",
+        "button_link_2": ""
+      }
+    },
+    "two_image_hero_hbzpbb": {
+      "type": "two-image-hero",
+      "name": "Fullscreen Double Image",
+      "settings": {
+        "image_1": "shopify://shop_images/Pro-Capture_One_0432_1.png",
+        "button_text_1": "",
+        "button_link_1": "",
+        "image_2": "shopify://shop_images/Pro-Capture_One_0471_1_1.png",
+        "button_text_2": "",
+        "button_link_2": ""
+      }
+    },
     "featured_collection_mk3XAm": {
       "type": "featured-collection",
       "name": "t:sections.featured-collection.presets.name",
@@ -144,6 +168,8 @@
     "related-products",
     "174682019332477b9c",
     "main",
+    "two_image_hero_xng4nN",
+    "two_image_hero_hbzpbb",
     "featured_collection_mk3XAm"
   ]
 }
