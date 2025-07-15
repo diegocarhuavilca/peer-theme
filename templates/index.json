@@ -71,6 +71,7 @@
         "slide_9wzrhY": {
           "type": "slide",
           "settings": {
+            "image": "shopify://shop_images/CARTERA_SADE_MARFIL_MODELO_FRONTAL_BRILLO.png",
             "image_overlay_opacity": 0,
             "heading": "",
             "heading_size": "h2",
@@ -85,11 +86,12 @@
             "color_scheme": ""
           }
         },
-        "slide_xYttiG": {
+        "slide_7kViJa": {
           "type": "slide",
           "settings": {
-            "image_overlay_opacity": 0,
-            "heading": "Diapositiva de imagen",
+            "image": "shopify://shop_images/CARTERA_SADE_VINO_MODELO_FRONTAL.png",
+            "image_overlay_opacity": 30,
+            "heading": "",
             "heading_size": "h1",
             "subheading": "Cuenta la historia de tu marca a través de imágenes",
             "button_label": "Etiqueta de botón",
@@ -99,18 +101,18 @@
             "box_align": "middle-center",
             "text_alignment": "center",
             "text_alignment_mobile": "center",
-            "color_scheme": ""
+            "color_scheme": "scheme-1"
           }
         }
       },
       "block_order": [
         "slide_9wzrhY",
-        "slide_xYttiG"
+        "slide_7kViJa"
       ],
       "custom_css": [
-        ".slideshow__controls {display: none;}",
+        ".slideshow__controls,.slideshow__text-wrapper {display: none;}",
         ".banner__box {background: transparent;}",
-        ".button--secondary{opacity:1;}"
+        ".button--secondary {opacity: 1;}"
       ],
       "name": "t:sections.slideshow.presets.name",
       "settings": {
