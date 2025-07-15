@@ -1,17 +1,16 @@
 <div class="collage-fotos-viewer">
   {% if product.metafields.custom.collage_fotos.value %}
-    <h2>Collage de Fotos</h2>
     <div class="image-grid">
       {% for item in product.metafields.custom.collage_fotos.value %}
         {% assign image_url = '' %}
         {% assign image_alt = 'Collage image' %}
         {% if item.src %}
-          {% assign image_url = item.src | img_url: '1024x' %} {# Adjust size as needed #}
+          {% assign image_url = item.src | img_url: '1024x' %}
           {% if item.alt %}
             {% assign image_alt = item.alt %}
           {% endif %}
         {% elsif item contains 'http' or item contains '/' %}
-          {% assign image_url = item | img_url: '1024x' %} {# Adjust size as needed #}
+          {% assign image_url = item | img_url: '1024x' %}
         {% endif %}
         {% if image_url != '' %}
           <div class="image-item">
