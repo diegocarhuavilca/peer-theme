@@ -109,7 +109,8 @@
       ],
       "custom_css": [
         ".slideshow__controls {display: none;}",
-        ".banner__box{background: transparent;}"
+        ".banner__box {background: transparent;}",
+        ".button--secondary{opacity:1;}"
       ],
       "name": "t:sections.slideshow.presets.name",
       "settings": {
