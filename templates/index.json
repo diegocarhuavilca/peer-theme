@@ -77,7 +77,7 @@
             "heading_size": "h2",
             "subheading": "",
             "button_label": "Etiqueta de botón",
-            "link": "",
+            "link": "shopify://products/sade-bag-vino",
             "button_style_secondary": true,
             "show_text_box": true,
             "box_align": "bottom-center",
@@ -120,7 +120,7 @@
         "slide_height": "small",
         "slider_visual": "numbers",
         "auto_rotate": true,
-        "change_slides_speed": 5,
+        "change_slides_speed": 3,
         "image_behavior": "ambient",
         "show_text_below": true,
         "accessibility_info": "Presentación de diapositivas sobre tu marca"
