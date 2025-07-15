@@ -5,7 +5,8 @@
         class="image-block"
         style="background-image: url({{ section.settings.image_1 | image_url: width: 1600 }});"
       >
-        <a href="{{ section.settings.image_1 | image_url: width: 2048 }}" data-lightbox="gallery" class="image-lightbox-trigger"></a>
+        <a href="#modal-image-1" data-toggle="modal" class="image-modal-trigger" data-image-url="{{ section.settings.image_1 | image_url: width: 2048 }}"></a>
+
         {% if section.settings.button_text_1 != blank %}
           <a href="{{ section.settings.button_link_1 }}" class="image-button">{{ section.settings.button_text_1 }}</a>
         {% endif %}
@@ -17,7 +18,8 @@
         class="image-block"
         style="background-image: url({{ section.settings.image_2 | image_url: width: 1600 }});"
       >
-        <a href="{{ section.settings.image_2 | image_url: width: 2048 }}" data-lightbox="gallery" class="image-lightbox-trigger"></a>
+        <a href="#modal-image-2" data-toggle="modal" class="image-modal-trigger" data-image-url="{{ section.settings.image_2 | image_url: width: 2048 }}"></a>
+
         {% if section.settings.button_text_2 != blank %}
           <a href="{{ section.settings.button_link_2 }}" class="image-button">{{ section.settings.button_text_2 }}</a>
         {% endif %}
@@ -26,102 +28,101 @@
   </div>
 </section>
 
-<style>
-  .fullscreen-double-image .image-container {
-    display: flex;
-    flex-direction: column;
-  }
-  @media (min-width: 768px) {
-    .fullscreen-double-image .image-container {
-      display: flex;
-      flex-direction: row;
-    }
+<div id="modal-image-1" class="your-theme-modal-class" style="display:none;">
+  <div class="your-theme-modal-content-class">
+    <img src="" alt="" class="modal-image-display" data-modal-image-id="1">
+  </div>
+</div>
+<div id="modal-image-2" class="your-theme-modal-class" style="display:none;">
+  <div class="your-theme-modal-content-class">
+    <img src="" alt="" class="modal-image-display" data-modal-image-id="2">
+  </div>
+</div>
 
-    .image-block {
-      flex: auto;
-    }
-  }
-  .image-block {
-    background-size: cover;
-    background-position: center;
-    cursor: pointer; /* Mantener el cursor de puntero */
-    height: 100vh;
-    position: relative;
-  }
-  /* Estilos para el nuevo enlace que activa el lightbox */
-  .image-lightbox-trigger {
+
+<style>
+  /* ... (Tu CSS anterior) ... */
+  .image-modal-trigger { /* Renombrado de .image-lightbox-trigger */
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 10; /* Asegurar que esté por encima de la imagen pero debajo del botón */
+    z-index: 10;
   }
-  .image-button {
-    position: absolute;
-    bottom: 30px;
-    left: 30px;
-    padding: 12px 24px;
-    background: rgba(0, 0, 0, 0.6);
-    color: #fff;
-    text-decoration: none;
-    border-radius: 6px;
-    font-size: 16px;
-    transition: background 0.3s;
-    z-index: 20; /* Asegurar que el botón esté por encima del trigger del lightbox */
-  }
-  .image-button:hover {
-    background: rgba(0, 0, 0, 0.8);
+  /* Asegúrate de que las clases del modal de tu tema sean correctas */
+  /* .your-theme-modal-class { ... } */
+  /* .your-theme-modal-content-class { ... } */
+  .modal-image-display {
+      max-width: 100%;
+      max-height: 90vh; /* Para que la imagen no sea más grande que la ventana */
+      display: block;
+      margin: auto;
   }
 </style>
 
 <script>
-  // No necesitamos el JavaScript anterior para el clic general, ya que el <a> tag lo manejará.
-  // El script del tema de Shopify que maneja el Lightbox se encargará de esto.
-  // Si tu tema usa una biblioteca específica (e.g., PhotoSwipe, Fancybox),
-  // asegúrate de que el atributo 'data-lightbox' (o similar) coincida con lo que tu tema espera.
-  // 'data-lightbox="gallery"' es un ejemplo común. Algunos temas usan 'data-fancybox', etc.
+  // Este script es necesario si el modal no carga la imagen automáticamente
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.image-modal-trigger').forEach(trigger => {
+      trigger.addEventListener('click', function(e) {
+        e.preventDefault(); // Evita que el enlace navegue
+        const imageUrl = this.getAttribute('data-image-url');
+        const targetId = this.getAttribute('href'); // Obtiene el ID del modal, ej: #modal-image-1
+
+        if (imageUrl && targetId) {
+          const modalImageElement = document.querySelector(`${targetId} .modal-image-display`);
+          if (modalImageElement) {
+            modalImageElement.src = imageUrl;
+            // Si tu tema tiene una función para abrir el modal, llámala aquí.
+            // Ej: Shopify.openModal(targetId.substring(1)); // Si el ID es '#modal-image-1', se pasa 'modal-image-1'
+            // O si el 'data-toggle' y 'data-target' ya lo manejan, no necesitas esto.
+          }
+        }
+      });
+    });
+  });
 </script>
 
 {% schema %}
-{
-  "name": "Fullscreen Double Image",
-  "settings": [
-    {
-      "type": "image_picker",
-      "id": "image_1",
-      "label": "Primera Imagen"
-    },
-    {
-      "type": "text",
-      "id": "button_text_1",
-      "label": "Texto del Botón 1"
-    },
-    {
-      "type": "url",
-      "id": "button_link_1",
-      "label": "Enlace del Botón 1"
-    },
-    {
-      "type": "image_picker",
-      "id": "image_2",
-      "label": "Segunda Imagen"
-    },
-    {
-      "type": "text",
-      "id": "button_text_2",
-      "label": "Texto del Botón 2"
-    },
-    {
-      "type": "url",
-      "id": "button_link_2",
-      "label": "Enlace del Botón 2"
-    }
-  ],
-  "presets": [
-    {
-      "name": "Imágenes Dobles en Pantalla Completa"
-    }
-  ]
-}
+  {
+    "name": "Fullscreen Double Image",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image_1",
+        "label": "Primera Imagen"
+      },
+      {
+        "type": "text",
+        "id": "button_text_1",
+        "label": "Texto del Botón 1"
+      },
+      {
+        "type": "url",
+        "id": "button_link_1",
+        "label": "Enlace del Botón 1"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_2",
+        "label": "Segunda Imagen"
+      },
+      {
+        "type": "text",
+        "id": "button_text_2",
+        "label": "Texto del Botón 2"
+      },
+      {
+        "type": "url",
+        "id": "button_link_2",
+        "label": "Enlace del Botón 2"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Imágenes Dobles en Pantalla Completa"
+      }
+    ]
+  }
 {% endschema %}
