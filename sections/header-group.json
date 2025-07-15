@@ -13,6 +13,18 @@
   "sections": {
     "announcement-bar": {
       "type": "announcement-bar",
+      "blocks": {
+        "announcement_UpNGgL": {
+          "type": "announcement",
+          "settings": {
+            "text": "Conoce nuestra coleccion Sade",
+            "link": "shopify://collections/sade-bags"
+          }
+        }
+      },
+      "block_order": [
+        "announcement_UpNGgL"
+      ],
       "custom_css": [
         ".utility-bar {background-color: rgb(51, 51, 51); height: 40px;}",
         ".announcement-bar__message {font-size: 12px;}"
