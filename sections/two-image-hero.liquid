@@ -1,139 +1,63 @@
-<section class="fullscreen-double-image">
-  <div class="image-container">
-    {% assign collage_images = product.metafields.custom_collage_fotos.value %}
-    {% if collage_images %}
-      holaa
-      {% if collage_images.size > 0 %}
-        {% assign image_1_data = collage_images[0] %}
-        {% assign image_2_data = collage_images[1] %}
+{% comment %}
+  Liquid component for displaying images from the "Collage Fotos" metafield.
+  Assumes the metafield `product.metafields.custom.collage_fotos`
+  stores an array of file objects or image URLs.
+{% endcomment %}
 
-        {% comment %} First Image Block {% endcomment %}
-        {% if image_1_data %}
-          <div
-            class="image-block"
-            data-link="{{ section.settings.button_link_1 }}"
-            style="background-image: url({{ image_1_data | image_url: width: 1600 }});"
-          >
-            {% if section.settings.button_text_1 != blank %}
-              <a href="{{ section.settings.button_link_1 }}" class="image-button">{{ section.settings.button_text_1 }}</a>
-            {% endif %}
-          </div>
-        {% endif %}
+<div class="collage-fotos-viewer">
+  {% if product.metafields.custom.collage_fotos.value %}
+    <h2>Collage de Fotos</h2>
+    <div class="image-grid">
+      {% for item in product.metafields.custom.collage_fotos.value %}
+        {% assign image_url = '' %}
+        {% assign image_alt = 'Collage image' %}
 
-        {% comment %} Second Image Block {% endcomment %}
-        {% if image_2_data %}
-          <div
-            class="image-block"
-            data-link="{{ section.settings.button_link_2 }}"
-            style="background-image: url({{ image_2_data | image_url: width: 1600 }});"
-          >
-            {% if section.settings.button_text_2 != blank %}
-              <a href="{{ section.settings.button_link_2 }}" class="image-button">{{ section.settings.button_text_2 }}</a>
-            {% endif %}
-          </div>
-        {% endif %}
-      {% else %}
         {% comment %}
-          If it's a single file (not an array, but the metafield holds one file)
-          This might happen if the metafield definition was changed or if only one file was uploaded.
+          Check if the item is a file object (e.g., from a file upload metafield)
+          or directly an image URL.
         {% endcomment %}
-        <div
-          class="image-block"
-          data-link="{{ section.settings.button_link_1 }}"
-          style="background-image: url({{ collage_images | image_url: width: 1600 }});"
-        >
-          {% if section.settings.button_text_1 != blank %}
-            <a href="{{ section.settings.button_link_1 }}" class="image-button">{{ section.settings.button_text_1 }}</a>
+        {% if item.src %}
+          {% assign image_url = item.src | img_url: '1024x' %} {# Adjust size as needed #}
+          {% if item.alt %}
+            {% assign image_alt = item.alt %}
           {% endif %}
-        </div>
-      {% endif %}
-    {% endif %}
-  </div>
-</section>
+        {% elsif item contains 'http' or item contains '/' %}
+          {% assign image_url = item | img_url: '1024x' %} {# Adjust size as needed #}
+        {% endif %}
+
+        {% if image_url != '' %}
+          <div class="image-item">
+            <img src="{{ image_url }}" alt="{{ image_alt }}" loading="lazy">
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  {% else %}
+    <p>No hay imágenes disponibles en el collage.</p>
+  {% endif %}
+</div>
 
 <style>
-  .fullscreen-double-image .image-container {
-    display: flex;
-    flex-direction: column;
+  .collage-fotos-viewer {
+    margin-top: 20px;
   }
-  @media (min-width: 768px) {
-    .fullscreen-double-image .image-container {
-      display: flex;
-      flex-direction: row;
-    }
-
-    .image-block {
-      flex: auto;
-    }
+  .collage-fotos-viewer h2 {
+    margin-bottom: 15px;
   }
-  .image-block {
-    background-size: cover;
-    background-position: center;
-    cursor: pointer;
-    height: 100vh;
-    position: relative;
+  .image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive grid */
+    gap: 15px;
   }
-  .image-button {
-    position: absolute;
-    bottom: 30px;
-    left: 30px;
-    padding: 12px 24px;
-    background: rgba(0, 0, 0, 0.6);
-    color: #fff;
-    text-decoration: none;
-    border-radius: 6px;
-    font-size: 16px;
-    transition: background 0.3s;
+  .image-item {
+    border: 1px solid #eee;
+    padding: 5px;
+    text-align: center;
   }
-  .image-button:hover {
-    background: rgba(0, 0, 0, 0.8);
+  .image-item img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
   }
 </style>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    document.querySelectorAll('.image-block').forEach((block) => {
-      block.addEventListener('click', function (e) {
-        const link = this.getAttribute('data-link');
-        const isButtonClick = e.target.closest('.image-button');
-
-        if (!isButtonClick && link) {
-          window.location.href = link;
-        }
-      });
-    });
-  });
-</script>
-
-{% schema %}
-{
-  "name": "FullscreenDoubleImage",
-  "settings": [
-    {
-      "type": "text",
-      "id": "button_text_1",
-      "label": "Button Text 1"
-    },
-    {
-      "type": "url",
-      "id": "button_link_1",
-      "label": "Button Link 1"
-    },
-    {
-      "type": "text",
-      "id": "button_text_2",
-      "label": "Button Text 2"
-    },
-    {
-      "type": "url",
-      "id": "button_link_2",
-      "label": "Button Link 2"
-    }
-  ],
-  "presets": [
-    {
-      "name": "Fullscreen Double Image (Metafield)"
-    }
-  ]
-}
-{% endschema %}
