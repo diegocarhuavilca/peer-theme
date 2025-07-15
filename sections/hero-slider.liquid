@@ -4,7 +4,7 @@
       <div class="swiper-slide relative">
         {% assign video_url = block.settings.video_url %}
         {% if video_url contains '.mp4' %}
-          <video autoplay muted loop playsinline class="w-full h-full object-cover" style="width:100%;object-fit:cover; background-color: black;" preload="auto">
+          <video class="w-full h-full object-cover" style="width:100%;object-fit:cover; background-color: black;" preload="auto" muted playsinline>
             <source src="{{ video_url }}" type="video/mp4">
             Your browser does not support the video tag.
           </video>
@@ -19,7 +19,7 @@
           {% if youtube_id %}
             <iframe
               class="w-full h-full"
-              src="https://www.youtube.com/embed/{{ youtube_id }}?autoplay=1&mute=1&loop=1&playlist={{ youtube_id }}&controls=0&showinfo=0&autohide=1&modestbranding=1"
+              src="https://www.youtube.com/embed/{{ youtube_id }}?autoplay=1&mute=1&loop=1&playlist={{ youtube_id }}&controls=0&showinfo=0&autohide=1&modestbranding=1&enablejsapi=1"
               frameborder="0"
               allow="autoplay; encrypted-media"
               allowfullscreen
@@ -27,7 +27,7 @@
           {% elsif vimeo_id %}
             <iframe
               class="w-full h-full"
-              src="https://player.vimeo.com/video/{{ vimeo_id }}?autoplay=1&loop=1&muted=1&background=1"
+              src="https://player.vimeo.com/video/{{ vimeo_id }}?autoplay=1&loop=1&muted=1&background=1&api=1"
               frameborder="0"
               allow="autoplay; fullscreen; picture-in-picture"
               allowfullscreen
@@ -67,11 +67,15 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    new Swiper('.hero-slider', {
+    const swiperContainer = document.querySelector('.hero-slider');
+    let ytPlayer = null; // To store YouTube API player object
+    let vimeoPlayer = null; // To store Vimeo API player object
+
+    const swiper = new Swiper(swiperContainer, {
       loop: true,
       autoplay: {
         delay: 5000,
-        disableOnInteraction: false, // Continue autoplay after user interaction
+        disableOnInteraction: false,
       },
       pagination: {
         el: '.swiper-pagination',
@@ -81,32 +85,163 @@
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
       },
-      // Ensure videos restart/play correctly when slide changes
       on: {
+        init: function () {
+          // Play initial video if it's an MP4 or initialize iframe
+          const initialSlide = this.slides[this.activeIndex];
+          playVideoInSlide(initialSlide);
+        },
         slideChangeTransitionStart: function () {
           const currentSlide = this.slides[this.activeIndex];
-          const videos = currentSlide.querySelectorAll('video');
-          videos.forEach(video => {
-            video.currentTime = 0; // Reset video to start
-            video.play();
-          });
-          const iframes = currentSlide.querySelectorAll('iframe');
-          iframes.forEach(iframe => {
-            // For iframes, we can't directly control. The embed parameters should handle it.
-            // If issues persist, consider reloading the iframe src or more complex API interactions.
-          });
+          const prevSlide = this.slides[this.previousIndex];
+
+          // Pause videos on the previous slide
+          if (prevSlide) {
+            pauseVideoInSlide(prevSlide);
+          }
+
+          // Play video on the current slide
+          playVideoInSlide(currentSlide);
         },
-        slideChangeTransitionEnd: function() {
-          // Pause videos on other slides to save resources
-          this.slides.forEach((slide, index) => {
-            if (index !== this.activeIndex) {
-              const videos = slide.querySelectorAll('video');
-              videos.forEach(video => video.pause());
-            }
-          });
-        }
+        // We'll manage MP4 looping with a dedicated event listener
       }
     });
+
+    // Centralized function to play video in a given slide
+    function playVideoInSlide(slide) {
+      if (!slide) return;
+
+      const video = slide.querySelector('video');
+      const iframe = slide.querySelector('iframe');
+
+      if (video) {
+        // For MP4 videos, wait for 'canplaythrough' event
+        if (video.readyState >= 3) { // Check if enough data is loaded
+          video.currentTime = 0;
+          video.play().catch(error => console.error("Video autoplay failed (ready state):", error));
+        } else {
+          // If not ready, listen for 'canplaythrough' to ensure smooth start
+          video.addEventListener('canplaythrough', function handler() {
+            video.currentTime = 0;
+            video.play().catch(error => console.error("Video autoplay failed (canplaythrough):", error));
+            video.removeEventListener('canplaythrough', handler); // Remove listener after playing
+          });
+          video.load(); // Ensure video loading starts if not already
+        }
+      } else if (iframe) {
+        const src = iframe.src;
+        if (src.includes('youtube.com')) {
+          initializeYouTubePlayer(iframe);
+        } else if (src.includes('vimeo.com')) {
+          initializeVimeoPlayer(iframe);
+        }
+      }
+    }
+
+    // Centralized function to pause video in a given slide
+    function pauseVideoInSlide(slide) {
+      if (!slide) return;
+
+      const video = slide.querySelector('video');
+      const iframe = slide.querySelector('iframe');
+
+      if (video) {
+        video.pause();
+        video.currentTime = 0; // Reset for next time it's active
+      } else if (iframe) {
+        const src = iframe.src;
+        if (src.includes('youtube.com') && ytPlayer) {
+          ytPlayer.pauseVideo();
+        } else if (src.includes('vimeo.com') && vimeoPlayer) {
+          vimeoPlayer.pause();
+        }
+      }
+    }
+
+    // MP4 Looping: Use 'ended' event with a slight delay
+    swiperContainer.querySelectorAll('video').forEach(video => {
+      video.addEventListener('ended', function() {
+        // Add a very small timeout to allow browser to reset its rendering
+        setTimeout(() => {
+          this.currentTime = 0;
+          this.play().catch(error => console.error("Video loop play failed:", error));
+        }, 50); // 50ms delay
+      });
+    });
+
+    // --- YouTube API Integration ---
+    function initializeYouTubePlayer(iframe) {
+      if (typeof YT === 'undefined' || !YT.Player) {
+        const tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        const firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+        window.onYouTubeIframeAPIReady = function() {
+          ytPlayer = new YT.Player(iframe, {
+            events: {
+              'onReady': onYouTubePlayerReady,
+              'onStateChange': onYouTubePlayerStateChange
+            }
+          });
+        };
+      } else if (!ytPlayer || ytPlayer.getIframe() !== iframe) { // Ensure correct player instance for current iframe
+        ytPlayer = new YT.Player(iframe, {
+          events: {
+            'onReady': onYouTubePlayerReady,
+            'onStateChange': onYouTubePlayerStateChange
+          }
+        });
+      } else {
+        // If player already exists for this iframe, just ensure it plays
+        ytPlayer.mute();
+        ytPlayer.playVideo();
+      }
+    }
+
+    function onYouTubePlayerReady(event) {
+      event.target.mute(); // Ensure muted
+      event.target.playVideo();
+    }
+
+    function onYouTubePlayerStateChange(event) {
+      if (event.data === YT.PlayerState.ENDED) {
+        // Small delay for YouTube loop
+        setTimeout(() => {
+          event.target.seekTo(0);
+          event.target.playVideo();
+        }, 50);
+      } else if (event.data === YT.PlayerState.PAUSED) {
+        // Prevent accidental pause from user interaction if autoplay is desired
+        // event.target.playVideo(); // Uncomment if you want to force continuous play even if user pauses
+      }
+    }
+
+    // --- Vimeo API Integration ---
+    function initializeVimeoPlayer(iframe) {
+      if (typeof Vimeo === 'undefined' || !Vimeo.Player) {
+        const tag = document.createElement('script');
+        tag.src = "https://player.vimeo.com/api/player.js";
+        const firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+        tag.onload = function() {
+          vimeoPlayer = new Vimeo.Player(iframe);
+          vimeoPlayer.ready().then(function() {
+            vimeoPlayer.setVolume(0); // Ensure muted
+            vimeoPlayer.play().catch(error => console.error("Vimeo autoplay failed:", error));
+          });
+        };
+      } else if (!vimeoPlayer || vimeoPlayer.element !== iframe) { // Ensure correct player instance for current iframe
+        vimeoPlayer = new Vimeo.Player(iframe);
+        vimeoPlayer.ready().then(function() {
+          vimeoPlayer.setVolume(0); // Ensure muted
+          vimeoPlayer.play().catch(error => console.error("Vimeo autoplay failed:", error));
+        });
+      } else {
+        // If player already exists for this iframe, just ensure it plays
+        vimeoPlayer.setVolume(0);
+        vimeoPlayer.play();
+      }
+    }
   });
 </script>
 
