@@ -107,14 +107,17 @@
         "slide_9wzrhY",
         "slide_xYttiG"
       ],
+      "custom_css": [
+        ".slideshow__controls {display: none;}"
+      ],
       "name": "t:sections.slideshow.presets.name",
       "settings": {
         "layout": "full_bleed",
-        "slide_height": "medium",
-        "slider_visual": "counter",
+        "slide_height": "small",
+        "slider_visual": "numbers",
         "auto_rotate": true,
         "change_slides_speed": 5,
-        "image_behavior": "none",
+        "image_behavior": "ambient",
         "show_text_below": true,
         "accessibility_info": "Presentación de diapositivas sobre tu marca"
       }
