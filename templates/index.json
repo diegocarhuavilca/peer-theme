@@ -35,12 +35,15 @@
     },
     "featured_collection_Lm6UYX": {
       "type": "featured-collection",
+      "custom_css": [
+        "h2 {font-size: 1.3em;}"
+      ],
       "name": "t:sections.featured-collection.presets.name",
       "settings": {
         "collection": "sade-bags",
         "products_to_show": 3,
-        "title": "",
-        "heading_size": "h1",
+        "title": "<strong>NEW IN : LEATHER</strong>",
+        "heading_size": "h2",
         "description": "",
         "show_description": false,
         "description_style": "body",
@@ -61,21 +64,10 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
-    },
-    "custom_liquid_yNf3mJ": {
-      "type": "custom-liquid",
-      "name": "t:sections.custom-liquid.presets.name",
-      "settings": {
-        "custom_liquid": "{% if product.metafields.custom.product_collage_images.size > 0 %}\n  <div class=\"product-collage-section\">\n    <h2>Más imágenes del producto</h2>\n    <div class=\"collage-grid\">\n      {% for image in product.metafields.custom.product_collage_images %}\n        <div class=\"collage-item\">\n          <img src=\"{{ image | img_url: '1024x' }}\" alt=\"Imagen de collage para {{ product.title }}\">\n        </div>\n      {% endfor %}\n    </div>\n  </div>\n\n  <style>\n    .product-collage-section {\n      margin-top: 40px;\n      text-align: center;\n    }\n    .collage-grid {\n      display: grid;\n      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Ejemplo de grid */\n      gap: 15px;\n      margin-top: 20px;\n    }\n    .collage-item img {\n      max-width: 100%;\n      height: auto;\n      display: block;\n    }\n  </style>\n{% endif %}",
-        "color_scheme": "",
-        "padding_top": 40,
-        "padding_bottom": 52
-      }
     }
   },
   "order": [
     "hero_slider_AQJtzG",
-    "featured_collection_Lm6UYX",
-    "custom_liquid_yNf3mJ"
+    "featured_collection_Lm6UYX"
   ]
 }
