@@ -13,28 +13,16 @@
   "sections": {
     "announcement-bar": {
       "type": "announcement-bar",
-      "blocks": {
-        "announcement-bar-0": {
-          "type": "announcement",
-          "settings": {
-            "text": "50% DCTO SALE | Comprar ahora",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "announcement-bar-0"
-      ],
       "custom_css": [
         ".utility-bar {background-color: rgb(51, 51, 51); height: 40px;}",
         ".announcement-bar__message {font-size: 12px;}"
       ],
       "settings": {
-        "auto_rotate": false,
+        "auto_rotate": true,
         "change_slides_speed": 5,
         "color_scheme": "scheme-4",
         "show_line_separator": true,
-        "show_social": false,
+        "show_social": true,
         "enable_country_selector": false,
         "enable_language_selector": false
       }
