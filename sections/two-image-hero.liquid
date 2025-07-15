@@ -1,13 +1,8 @@
 <section class="fullscreen-double-image">
   <div class="image-container">
     {% assign collage_images = product.metafields.custom_collage_fotos.value %}
-
-    {% comment %}
-      Check if collage_images is an array (multiple files) or a single file.
-      If it's an array, we'll try to use the first two images.
-    {% endcomment %}
-
     {% if collage_images %}
+      holaa
       {% if collage_images.size > 0 %}
         {% assign image_1_data = collage_images[0] %}
         {% assign image_2_data = collage_images[1] %}
