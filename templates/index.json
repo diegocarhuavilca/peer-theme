@@ -19,8 +19,8 @@
             "video_url": "",
             "heading": "",
             "subheading": "",
-            "button_link": "",
-            "button_label": ""
+            "button_link": "shopify://collections",
+            "button_label": "SHOP NOW"
           }
         }
       },

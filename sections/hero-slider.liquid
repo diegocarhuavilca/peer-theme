@@ -25,11 +25,11 @@
           >
         {% endif %}
 
-        <div style="position: absolute; inset: 0; background-color: rgba(0, 0, 0, 0.5); display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 2rem; color: white;">
+        <div style="position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 2rem; color: white;">
   <h2 style="font-size: 2.25rem; font-weight: 700;">{{ block.settings.heading }}</h2>
   <p style="margin-top: 0.5rem; font-size: 1.125rem;">{{ block.settings.subheading }}</p>
   {% if block.settings.button_link %}
-    <a href="{{ block.settings.button_link }}" style="margin-top: 1rem; display: inline-block; background-color: white; color: black; padding: 0.5rem 1.5rem; border-radius: 0.25rem;">
+    <a href="{{ block.settings.button_link }}" style="margin-top: 1rem; display: inline-block; background-color: transparent; color: white;boder:1px solid white; padding: 0.5rem 1.5rem; border-radius: 0.25rem;">
       {{ block.settings.button_label }}
     </a>
   {% endif %}
