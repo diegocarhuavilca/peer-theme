@@ -4,7 +4,7 @@
       <div class="swiper-slide relative">
         {% assign video_url = block.settings.video_url %}
         {% if video_url contains '.mp4' %}
-          <video class="w-full h-full object-cover" style="width:100%;object-fit:cover; background-color: black;" preload="auto" muted playsinline>
+          <video class="w-full object-cover" style="width:100%;object-fit:cover; background-color: black;height:60vh" preload="auto" muted playsinline loop>
             <source src="{{ video_url }}" type="video/mp4">
             Your browser does not support the video tag.
           </video>
@@ -26,7 +26,7 @@
             ></iframe>
           {% elsif vimeo_id %}
             <iframe
-              class="w-full h-full"
+              style="width:100%;object-fit:cover;height:60vh"
               src="https://player.vimeo.com/video/{{ vimeo_id }}?autoplay=1&loop=1&muted=1&background=1&api=1"
               frameborder="0"
               allow="autoplay; fullscreen; picture-in-picture"
