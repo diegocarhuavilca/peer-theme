@@ -3,10 +3,9 @@
     {% if section.settings.image_1 %}
       <div
         class="image-block"
+        data-link="{{ section.settings.button_link_1 }}"
         style="background-image: url({{ section.settings.image_1 | image_url: width: 1600 }});"
       >
-        <a href="#modal-image-1" data-toggle="modal" class="image-modal-trigger" data-image-url="{{ section.settings.image_1 | image_url: width: 2048 }}"></a>
-
         {% if section.settings.button_text_1 != blank %}
           <a href="{{ section.settings.button_link_1 }}" class="image-button">{{ section.settings.button_text_1 }}</a>
         {% endif %}
@@ -16,10 +15,9 @@
     {% if section.settings.image_2 %}
       <div
         class="image-block"
+        data-link="{{ section.settings.button_link_2 }}"
         style="background-image: url({{ section.settings.image_2 | image_url: width: 1600 }});"
       >
-        <a href="#modal-image-2" data-toggle="modal" class="image-modal-trigger" data-image-url="{{ section.settings.image_2 | image_url: width: 2048 }}"></a>
-
         {% if section.settings.button_text_2 != blank %}
           <a href="{{ section.settings.button_link_2 }}" class="image-button">{{ section.settings.button_text_2 }}</a>
         {% endif %}
@@ -28,56 +26,54 @@
   </div>
 </section>
 
-<div id="modal-image-1" class="your-theme-modal-class" style="display:none;">
-  <div class="your-theme-modal-content-class">
-    <img src="" alt="" class="modal-image-display" data-modal-image-id="1">
-  </div>
-</div>
-<div id="modal-image-2" class="your-theme-modal-class" style="display:none;">
-  <div class="your-theme-modal-content-class">
-    <img src="" alt="" class="modal-image-display" data-modal-image-id="2">
-  </div>
-</div>
-
-
 <style>
-  /* ... (Tu CSS anterior) ... */
-  .image-modal-trigger { /* Renombrado de .image-lightbox-trigger */
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 10;
+  .fullscreen-double-image .image-container {
+    display: flex;
+    flex-direction: column;
   }
-  /* Asegúrate de que las clases del modal de tu tema sean correctas */
-  /* .your-theme-modal-class { ... } */
-  /* .your-theme-modal-content-class { ... } */
-  .modal-image-display {
-      max-width: 100%;
-      max-height: 90vh; /* Para que la imagen no sea más grande que la ventana */
-      display: block;
-      margin: auto;
+  @media (min-width: 768px) {
+    .fullscreen-double-image .image-container {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .image-block {
+      flex: auto;
+    }
+  }
+  .image-block {
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    height: 100vh;
+    position: relative;
+  }
+  .image-button {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    padding: 12px 24px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: background 0.3s;
+  }
+  .image-button:hover {
+    background: rgba(0, 0, 0, 0.8);
   }
 </style>
 
 <script>
-  // Este script es necesario si el modal no carga la imagen automáticamente
-  document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('.image-modal-trigger').forEach(trigger => {
-      trigger.addEventListener('click', function(e) {
-        e.preventDefault(); // Evita que el enlace navegue
-        const imageUrl = this.getAttribute('data-image-url');
-        const targetId = this.getAttribute('href'); // Obtiene el ID del modal, ej: #modal-image-1
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.image-block').forEach((block) => {
+      block.addEventListener('click', function (e) {
+        const link = this.getAttribute('data-link');
+        const isButtonClick = e.target.closest('.image-button');
 
-        if (imageUrl && targetId) {
-          const modalImageElement = document.querySelector(`${targetId} .modal-image-display`);
-          if (modalImageElement) {
-            modalImageElement.src = imageUrl;
-            // Si tu tema tiene una función para abrir el modal, llámala aquí.
-            // Ej: Shopify.openModal(targetId.substring(1)); // Si el ID es '#modal-image-1', se pasa 'modal-image-1'
-            // O si el 'data-toggle' y 'data-target' ya lo manejan, no necesitas esto.
-          }
+        if (!isButtonClick && link) {
+          window.location.href = link;
         }
       });
     });
@@ -85,44 +81,44 @@
 </script>
 
 {% schema %}
-  {
-    "name": "Fullscreen Double Image",
-    "settings": [
-      {
-        "type": "image_picker",
-        "id": "image_1",
-        "label": "Primera Imagen"
-      },
-      {
-        "type": "text",
-        "id": "button_text_1",
-        "label": "Texto del Botón 1"
-      },
-      {
-        "type": "url",
-        "id": "button_link_1",
-        "label": "Enlace del Botón 1"
-      },
-      {
-        "type": "image_picker",
-        "id": "image_2",
-        "label": "Segunda Imagen"
-      },
-      {
-        "type": "text",
-        "id": "button_text_2",
-        "label": "Texto del Botón 2"
-      },
-      {
-        "type": "url",
-        "id": "button_link_2",
-        "label": "Enlace del Botón 2"
-      }
-    ],
-    "presets": [
-      {
-        "name": "Imágenes Dobles en Pantalla Completa"
-      }
-    ]
-  }
+{
+  "name": "Fullscreen Double Image",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image_1",
+      "label": "First Image"
+    },
+    {
+      "type": "text",
+      "id": "button_text_1",
+      "label": "Button Text 1"
+    },
+    {
+      "type": "url",
+      "id": "button_link_1",
+      "label": "Button Link 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_2",
+      "label": "Second Image"
+    },
+    {
+      "type": "text",
+      "id": "button_text_2",
+      "label": "Button Text 2"
+    },
+    {
+      "type": "url",
+      "id": "button_link_2",
+      "label": "Button Link 2"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Fullscreen Double Image"
+    }
+  ]
+}
 {% endschema %}
