@@ -4,16 +4,35 @@
       <div class="swiper-slide relative">
         {% assign video_url = block.settings.video_url %}
         {% if video_url contains '.mp4' %}
-          <video autoplay muted loop playsinline class="w-full h-full object-cover" style="width:100%;object-fit:cover">
+          <video autoplay muted loop playsinline class="w-full h-full object-cover" style="width:100%;object-fit:cover; background-color: black;" preload="auto">
             <source src="{{ video_url }}" type="video/mp4">
+            Your browser does not support the video tag.
           </video>
         {% elsif video_url contains 'youtube.com' or video_url contains 'vimeo.com' %}
-          <iframe
-            class="w-full h-full"
-            src="{{ video_url | replace: 'watch?v=', 'embed/' }}"
-            frameborder="0"
-            allowfullscreen
-          ></iframe>
+          {% comment %}
+            For YouTube/Vimeo, autoplay and looping behavior is controlled by their embed parameters.
+            We'll add parameters for autoplay, mute, and loop for a better experience.
+          {% endcomment %}
+          {% assign youtube_id = video_url | split: 'v=' | last | split: '&' | first %}
+          {% assign vimeo_id = video_url | split: '/' | last %}
+
+          {% if youtube_id %}
+            <iframe
+              class="w-full h-full"
+              src="https://www.youtube.com/embed/{{ youtube_id }}?autoplay=1&mute=1&loop=1&playlist={{ youtube_id }}&controls=0&showinfo=0&autohide=1&modestbranding=1"
+              frameborder="0"
+              allow="autoplay; encrypted-media"
+              allowfullscreen
+            ></iframe>
+          {% elsif vimeo_id %}
+            <iframe
+              class="w-full h-full"
+              src="https://player.vimeo.com/video/{{ vimeo_id }}?autoplay=1&loop=1&muted=1&background=1"
+              frameborder="0"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          {% endif %}
         {% elsif block.settings.image %}
           <img
             src="{{ block.settings.image | img_url: '1600x' }}"
@@ -26,19 +45,18 @@
         {% endif %}
 
         <div style="position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 2rem; color: white;">
-  <h2 style="font-size: 2.25rem; font-weight: 700;">{{ block.settings.heading }}</h2>
-  <p style="margin-top: 0.5rem; font-size: 1.125rem;">{{ block.settings.subheading }}</p>
-  {% if block.settings.button_link %}
-    <a href="{{ block.settings.button_link }}" style="margin-top: 1rem; display: inline-block; background-color: transparent; color: white;border:1px solid white; padding: 0.5rem 1.5rem; border-radius: 0.25rem;text-decoration:none">
-      {{ block.settings.button_label }}
-    </a>
-  {% endif %}
-</div>
+          <h2 style="font-size: 2.25rem; font-weight: 700;">{{ block.settings.heading }}</h2>
+          <p style="margin-top: 0.5rem; font-size: 1.125rem;">{{ block.settings.subheading }}</p>
+          {% if block.settings.button_link %}
+            <a href="{{ block.settings.button_link }}" style="margin-top: 1rem; display: inline-block; background-color: transparent; color: white;border:1px solid white; padding: 0.5rem 1.5rem; border-radius: 0.25rem;text-decoration:none">
+              {{ block.settings.button_label }}
+            </a>
+          {% endif %}
+        </div>
       </div>
     {% endfor %}
   </div>
 
-  <!-- Add pagination and navigation if desired -->
   <div class="swiper-pagination"></div>
   <div class="swiper-button-prev"></div>
   <div class="swiper-button-next"></div>
@@ -53,6 +71,7 @@
       loop: true,
       autoplay: {
         delay: 5000,
+        disableOnInteraction: false, // Continue autoplay after user interaction
       },
       pagination: {
         el: '.swiper-pagination',
@@ -62,6 +81,31 @@
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
       },
+      // Ensure videos restart/play correctly when slide changes
+      on: {
+        slideChangeTransitionStart: function () {
+          const currentSlide = this.slides[this.activeIndex];
+          const videos = currentSlide.querySelectorAll('video');
+          videos.forEach(video => {
+            video.currentTime = 0; // Reset video to start
+            video.play();
+          });
+          const iframes = currentSlide.querySelectorAll('iframe');
+          iframes.forEach(iframe => {
+            // For iframes, we can't directly control. The embed parameters should handle it.
+            // If issues persist, consider reloading the iframe src or more complex API interactions.
+          });
+        },
+        slideChangeTransitionEnd: function() {
+          // Pause videos on other slides to save resources
+          this.slides.forEach((slide, index) => {
+            if (index !== this.activeIndex) {
+              const videos = slide.querySelectorAll('video');
+              videos.forEach(video => video.pause());
+            }
+          });
+        }
+      }
     });
   });
 </script>
