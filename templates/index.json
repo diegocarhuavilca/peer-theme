@@ -15,10 +15,11 @@
         "slide_kfNfdr": {
           "type": "slide",
           "settings": {
+            "image": "shopify://shop_images/CARTERA_SADE_MARFIL_MODELO_FRONTAL.png",
             "video_url": "",
-            "heading": "Your Slide Title",
-            "subheading": "Your slide description",
-            "button_link": "",
+            "heading": "",
+            "subheading": "",
+            "button_link": "shopify://products/cartera-sade-marfil",
             "button_label": "Shop Now"
           }
         }
