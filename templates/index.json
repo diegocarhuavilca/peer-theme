@@ -48,7 +48,7 @@
         "image": "shopify://shop_images/CARTERA_SADE_MARFIL_MODELO_FRONTAL.png",
         "image_2": "shopify://shop_images/CARTERA_SADE_MARFIL_MODELO_LATERAL.png",
         "image_overlay_opacity": 0,
-        "image_height": "large",
+        "image_height": "adapt",
         "image_behavior": "zoom-in",
         "desktop_content_position": "bottom-center",
         "desktop_content_alignment": "center",
