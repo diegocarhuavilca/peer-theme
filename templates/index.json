@@ -9,29 +9,55 @@
  */
 {
   "sections": {
-    "hero_slider_AQJtzG": {
-      "type": "hero-slider",
+    "image_banner_LRGDJt": {
+      "type": "image-banner",
       "blocks": {
-        "slide_kfNfdr": {
-          "type": "slide",
+        "heading_EWkPgP": {
+          "type": "heading",
           "settings": {
-            "image": "shopify://shop_images/CARTERA_SADE_MARFIL_MODELO_FRONTAL.png",
-            "video_url": "",
             "heading": "",
-            "subheading": "",
-            "button_link": "shopify://products/cartera-sade-marfil",
-            "button_label": "Shop Now"
+            "heading_size": "h1"
+          }
+        },
+        "text_xchke9": {
+          "type": "text",
+          "settings": {
+            "text": "",
+            "text_style": "body"
+          }
+        },
+        "buttons_nfXLf3": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "",
+            "button_link_1": "",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
           }
         }
       },
       "block_order": [
-        "slide_kfNfdr"
+        "heading_EWkPgP",
+        "text_xchke9",
+        "buttons_nfXLf3"
       ],
-      "custom_css": [
-        ".hero-slider {margin-top: -65px;}"
-      ],
-      "name": "Hero Slider",
-      "settings": {}
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/CARTERA_SADE_VINO_MODELO_FRONTAL.png",
+        "image_2": "shopify://shop_images/CARTERA_SADE_MARFIL_MODELO_LATERAL.png",
+        "image_overlay_opacity": 0,
+        "image_height": "large",
+        "image_behavior": "zoom-in",
+        "desktop_content_position": "bottom-center",
+        "desktop_content_alignment": "center",
+        "show_text_box": false,
+        "color_scheme": "",
+        "stack_images_on_mobile": true,
+        "mobile_content_alignment": "center",
+        "show_text_below": true
+      }
     },
     "featured_collection_Lm6UYX": {
       "type": "featured-collection",
@@ -91,7 +117,7 @@
     }
   },
   "order": [
-    "hero_slider_AQJtzG",
+    "image_banner_LRGDJt",
     "featured_collection_Lm6UYX",
     "175261604720c2c685",
     "1752616464cdaa88eb"
