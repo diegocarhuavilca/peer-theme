@@ -45,7 +45,7 @@
       ],
       "name": "t:sections.image-banner.presets.name",
       "settings": {
-        "image": "shopify://shop_images/CARTERA_SADE_VINO_MODELO_FRONTAL.png",
+        "image": "shopify://shop_images/CARTERA_SADE_MARFIL_MODELO_FRONTAL.png",
         "image_2": "shopify://shop_images/CARTERA_SADE_MARFIL_MODELO_LATERAL.png",
         "image_overlay_opacity": 0,
         "image_height": "large",
