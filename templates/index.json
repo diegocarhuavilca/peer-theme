@@ -12,20 +12,19 @@
     "hero_slider_AQJtzG": {
       "type": "hero-slider",
       "blocks": {
-        "slide_z9nJy7": {
+        "slide_kfNfdr": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/bolso_de_cuero_sade_bag_modelo_frontal.png",
-            "video_url": "https://cdn.shopify.com/videos/c/o/v/68b1f171939548a6974fea55f23ed36f.mp4",
-            "heading": "",
-            "subheading": "",
-            "button_link": "shopify://collections/sade-bags",
-            "button_label": "SHOP NOW"
+            "video_url": "",
+            "heading": "Your Slide Title",
+            "subheading": "Your slide description",
+            "button_link": "",
+            "button_label": "Shop Now"
           }
         }
       },
       "block_order": [
-        "slide_z9nJy7"
+        "slide_kfNfdr"
       ],
       "custom_css": [
         ".hero-slider {margin-top: -65px;}"
