@@ -87,39 +87,13 @@
         "quick_add": "none",
         "columns_mobile": "1",
         "swipe_on_mobile": true,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "175261604720c2c685": {
-      "type": "apps",
-      "settings": {
-        "include_margins": true
-      }
-    },
-    "1752616464cdaa88eb": {
-      "type": "apps",
-      "blocks": {
-        "xo_gallery_xo_gallery_JjKG87": {
-          "type": "shopify://apps/xo-gallery/blocks/xo-gallery/e61dfbaa-1a75-4e4e-bffc-324f17325251",
-          "settings": {
-            "id": 1,
-            "mid": ""
-          }
-        }
-      },
-      "block_order": [
-        "xo_gallery_xo_gallery_JjKG87"
-      ],
-      "settings": {
-        "include_margins": true
+        "padding_top": 0,
+        "padding_bottom": 0
       }
     }
   },
   "order": [
     "image_banner_LRGDJt",
-    "featured_collection_Lm6UYX",
-    "175261604720c2c685",
-    "1752616464cdaa88eb"
+    "featured_collection_Lm6UYX"
   ]
 }
