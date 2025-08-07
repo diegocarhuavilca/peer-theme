@@ -91,6 +91,49 @@
         "padding_bottom": 0
       }
     },
+    "rich_text_CCQKNL": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_eMpn4J": {
+          "type": "heading",
+          "settings": {
+            "heading": "Crea tu pieza única de cuero",
+            "heading_size": "h2"
+          }
+        },
+        "text_n7Pd9t": {
+          "type": "text",
+          "settings": {
+            "text": "<p>¿Buscas un bolso que realmente te represente? En Peer, te damos la oportunidad de diseñar un producto de cuero fiel a tu estilo.</p>"
+          }
+        },
+        "button_efBKPw": {
+          "type": "button",
+          "settings": {
+            "button_label": "Escríbenos",
+            "button_link": "https://api.whatsapp.com/send?phone=51989427138&text=Hola%20!%20Quisiera%20hacer%20un%20pedido%20personalizado%20en%20el%20modelo%20Sade",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_eMpn4J",
+        "text_n7Pd9t",
+        "button_efBKPw"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-1",
+        "full_width": false,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
     "image_banner_bW8gkK": {
       "type": "image-banner",
       "blocks": {
@@ -145,6 +188,7 @@
   "order": [
     "image_banner_LRGDJt",
     "featured_collection_Lm6UYX",
+    "rich_text_CCQKNL",
     "image_banner_bW8gkK"
   ]
 }
