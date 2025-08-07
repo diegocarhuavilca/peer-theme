@@ -14,6 +14,13 @@
     "announcement-bar": {
       "type": "announcement-bar",
       "blocks": {
+        "announcement_ftTiX9": {
+          "type": "announcement",
+          "settings": {
+            "text": "Personaliza tu cartera | Contacto",
+            "link": "https://api.whatsapp.com/send?phone=51989427138&text=Hola%20!%20Quisiera%20hacer%20un%20pedido%20personalizado%20en%20el%20modelo%20Sade"
+          }
+        },
         "announcement_UpNGgL": {
           "type": "announcement",
           "settings": {
@@ -23,6 +30,7 @@
         }
       },
       "block_order": [
+        "announcement_ftTiX9",
         "announcement_UpNGgL"
       ],
       "custom_css": [
