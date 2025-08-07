@@ -103,6 +103,49 @@
         "padding_bottom": 0
       }
     },
+    "rich_text_7kV3zt": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_L6fzTL": {
+          "type": "heading",
+          "settings": {
+            "heading": "",
+            "heading_size": "h1"
+          }
+        },
+        "text_3N3wNN": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Envios a todo el Peru 🇵🇪 Escribenos para personalizar tu bolso</p>"
+          }
+        },
+        "button_qUVkT6": {
+          "type": "button",
+          "settings": {
+            "button_label": "",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_L6fzTL",
+        "text_3N3wNN",
+        "button_qUVkT6"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
     "two_image_hero_hbzpbb": {
       "type": "two-image-hero",
       "name": "Fullscreen Double Image",
@@ -142,6 +185,7 @@
     "related-products",
     "174682019332477b9c",
     "main",
+    "rich_text_7kV3zt",
     "two_image_hero_hbzpbb",
     "featured_collection_mk3XAm"
   ]
