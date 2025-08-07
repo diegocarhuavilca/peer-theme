@@ -17,14 +17,14 @@
         "announcement_ftTiX9": {
           "type": "announcement",
           "settings": {
-            "text": "Personaliza tu cartera | Contacto",
+            "text": "Personalizalo | Envios a todo el Peru 🇵🇪",
             "link": "https://api.whatsapp.com/send?phone=51989427138&text=Hola%20!%20Quisiera%20hacer%20un%20pedido%20personalizado%20en%20el%20modelo%20Sade"
           }
         },
         "announcement_UpNGgL": {
           "type": "announcement",
           "settings": {
-            "text": "Hasta 3 meses sin intereses | Comprar ahora",
+            "text": "Hasta 3 meses sin intereses | Envios a todo el Peru 🇵🇪",
             "link": "shopify://collections/sade-bags"
           }
         }
