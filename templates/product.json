@@ -41,13 +41,21 @@
           "type": "title",
           "settings": {}
         },
-        "description": {
-          "type": "description",
-          "settings": {}
-        },
         "price": {
           "type": "price",
           "settings": {}
+        },
+        "icon_with_text_JAmajR": {
+          "type": "icon-with-text",
+          "settings": {
+            "layout": "horizontal",
+            "icon_1": "heart",
+            "heading_1": "Encabezado",
+            "icon_2": "return",
+            "heading_2": "Encabezado",
+            "icon_3": "truck",
+            "heading_3": "Encabezado"
+          }
         },
         "variant_picker": {
           "type": "variant_picker",
@@ -66,26 +74,66 @@
             "show_dynamic_checkout": true,
             "show_gift_card_recipient": false
           }
+        },
+        "collapsible_tab_XgxRDN": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "DESCRIPCION",
+            "icon": "none",
+            "content": "{{ product.description }}",
+            "page": ""
+          }
+        },
+        "collapsible_tab_7iq9RU": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "DEVOLUCIONES",
+            "icon": "none",
+            "content": "<p>Admitimos devoluciones de todos nuestros productos en un plazo de 14 días</p>",
+            "page": ""
+          }
+        },
+        "collapsible_tab_tGfXc9": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "HECHO A MANO",
+            "icon": "none",
+            "content": "<p>Todos nuestros productos son artesanales y hechos a mano en Peru.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_tab_pLRYAB": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "ENVIO",
+            "icon": "none",
+            "content": "<p>Este producto está on demand y llegará en un plazo de entre 20-30 dias.</p>",
+            "page": ""
+          }
         }
       },
       "block_order": [
         "title",
-        "description",
         "price",
+        "icon_with_text_JAmajR",
         "variant_picker",
         "quantity_selector",
-        "buy_buttons"
+        "buy_buttons",
+        "collapsible_tab_XgxRDN",
+        "collapsible_tab_7iq9RU",
+        "collapsible_tab_tGfXc9",
+        "collapsible_tab_pLRYAB"
       ],
       "custom_css": [
-        ".product {margin-bottom: 20px;}",
         ".product-media-container {border: none;}",
         ".thumbnail.global-media-settings.global-media-settings--no-shadow {border: none; box-shadow: none;}",
         ".product__description {word-wrap: break-word; margin-top: 10px;}",
         ".product__title h1 {font-size: 1.2em; font-weight: bold;}",
         ".product__title {margin: 0;}",
         ".price-item--regular {font-size: 16px;}",
-        ".swatch-input__label {width: 25px;}",
-        ".form__label {font-size: 14px; font-weight: bold;}"
+        ".form__label {font-size: 14px; font-weight: bold;}",
+        ".product__accordion summary .accordion__title {font-size: 0.8em;}",
+        ".product__accordion summary .accordion__content p {font-size: 0.5em;}"
       ],
       "settings": {
         "enable_sticky_info": true,
@@ -96,53 +144,10 @@
         "gallery_layout": "thumbnail_slider",
         "mobile_thumbnails": "hide",
         "media_position": "left",
-        "image_zoom": "lightbox",
+        "image_zoom": "hover",
         "hide_variants": true,
         "enable_video_looping": true,
         "padding_top": 24,
-        "padding_bottom": 0
-      }
-    },
-    "rich_text_7kV3zt": {
-      "type": "rich-text",
-      "blocks": {
-        "heading_L6fzTL": {
-          "type": "heading",
-          "settings": {
-            "heading": "",
-            "heading_size": "h1"
-          }
-        },
-        "text_3N3wNN": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Envios a todo el Peru 🇵🇪 Escribenos para personalizar tu bolso</p>"
-          }
-        },
-        "button_qUVkT6": {
-          "type": "button",
-          "settings": {
-            "button_label": "",
-            "button_link": "",
-            "button_style_secondary": false,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
-        }
-      },
-      "block_order": [
-        "heading_L6fzTL",
-        "text_3N3wNN",
-        "button_qUVkT6"
-      ],
-      "name": "t:sections.rich-text.presets.name",
-      "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
-        "color_scheme": "",
-        "full_width": true,
-        "padding_top": 0,
         "padding_bottom": 0
       }
     },
@@ -150,43 +155,12 @@
       "type": "two-image-hero",
       "name": "Fullscreen Double Image",
       "settings": {}
-    },
-    "featured_collection_mk3XAm": {
-      "type": "featured-collection",
-      "name": "t:sections.featured-collection.presets.name",
-      "settings": {
-        "collection": "sade-bags",
-        "products_to_show": 4,
-        "title": "",
-        "heading_size": "h1",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "columns_desktop": 4,
-        "enable_desktop_slider": false,
-        "full_width": true,
-        "show_view_all": true,
-        "view_all_style": "solid",
-        "color_scheme": "",
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "none",
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
     }
   },
   "order": [
     "related-products",
     "174682019332477b9c",
     "main",
-    "rich_text_7kV3zt",
-    "two_image_hero_hbzpbb",
-    "featured_collection_mk3XAm"
+    "two_image_hero_hbzpbb"
   ]
 }
