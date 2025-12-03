@@ -66,23 +66,16 @@
           "settings": {
             "collection": "pequenos"
           }
-        },
-        "featured_collection_rk98yw": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": ""
-          }
         }
       },
       "block_order": [
-        "featured_collection_HzGPcC",
-        "featured_collection_rk98yw"
+        "featured_collection_HzGPcC"
       ],
       "custom_css": [
         "h2 {font-size: 20px;}",
         ".card__content {position: absolute; bottom: 0;}",
         ".card__heading {color: white;}",
-        " .card__heading a {display: flex; justify-content: space-between; padding: 0 1em; }"
+        ".card__heading a {display: flex; justify-content: space-between; padding: 0 1em;}"
       ],
       "name": "t:sections.collection-list.presets.name",
       "settings": {
