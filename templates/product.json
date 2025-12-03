@@ -131,14 +131,14 @@
         ".form__label {font-size: 14px; font-weight: bold;}",
         ".product__accordion summary .accordion__title {font-size: 0.8em;}",
         ".product__accordion summary .accordion__content p {font-size: 0.5em;}",
-        ".shopify-payment-button__button{background: #C2D6ED; color: black;}"
+        ".shopify-payment-button__button {background: #c2d6ed; color: black;}"
       ],
       "settings": {
         "enable_sticky_info": true,
         "color_scheme": "scheme-1",
         "media_size": "medium",
         "constrain_to_viewport": true,
-        "media_fit": "cover",
+        "media_fit": "contain",
         "gallery_layout": "thumbnail_slider",
         "mobile_thumbnails": "hide",
         "media_position": "left",
