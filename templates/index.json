@@ -9,58 +9,25 @@
  */
 {
   "sections": {
-    "image_banner_bW8gkK": {
+    "image_banner_xGBGmR": {
       "type": "image-banner",
-      "blocks": {
-        "heading_BC6kH9": {
-          "type": "heading",
-          "settings": {
-            "heading": "",
-            "heading_size": "h1"
-          }
-        },
-        "text_Ug3f3g": {
-          "type": "text",
-          "settings": {
-            "text": "",
-            "text_style": "body"
-          }
-        },
-        "buttons_LUgjQD": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "",
-            "button_link_1": "",
-            "button_style_secondary_1": false,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
-        }
-      },
-      "block_order": [
-        "heading_BC6kH9",
-        "text_Ug3f3g",
-        "buttons_LUgjQD"
-      ],
       "name": "t:sections.image-banner.presets.name",
       "settings": {
-        "image": "shopify://shop_images/P4A6676.png",
-        "image_2": "shopify://shop_images/P4A6529_1.png",
-        "image_overlay_opacity": 0,
-        "image_height": "large",
+        "image": "shopify://shop_images/WhatsApp_Image_2025-12-02_at_9.29.43_PM.jpg",
+        "image_overlay_opacity": 40,
+        "image_height": "medium",
         "image_behavior": "none",
         "desktop_content_position": "middle-center",
         "desktop_content_alignment": "center",
-        "show_text_box": false,
+        "show_text_box": true,
         "color_scheme": "",
-        "stack_images_on_mobile": false,
+        "stack_images_on_mobile": true,
         "mobile_content_alignment": "center",
-        "show_text_below": false
+        "show_text_below": true
       }
     }
   },
   "order": [
-    "image_banner_bW8gkK"
+    "image_banner_xGBGmR"
   ]
 }
