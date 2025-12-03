@@ -17,7 +17,7 @@
         "announcement_ftTiX9": {
           "type": "announcement",
           "settings": {
-            "text": "Personalizalo | Envios a todo el Peru 🇵🇪",
+            "text": "Personalizalo | Envios a todo el Peru",
             "link": "https://api.whatsapp.com/send?phone=51989427138&text=Hola%20!%20Quisiera%20hacer%20un%20pedido%20personalizado%20en%20el%20modelo%20Sade"
           }
         },
@@ -34,16 +34,17 @@
         "announcement_UpNGgL"
       ],
       "custom_css": [
-        ".utility-bar {background-color: rgb(51, 51, 51); height: 40px;}",
-        ".announcement-bar__message {font-size: 12px;}"
+        ".utility-bar {height: 40px;}",
+        ".announcement-bar__message {font-size: 14px; font-weight: 600;}",
+        ".announcement-bar__message svg{display: none;}"
       ],
       "settings": {
         "auto_rotate": true,
         "change_slides_speed": 5,
-        "color_scheme": "scheme-4",
-        "show_line_separator": true,
+        "color_scheme": "scheme-1",
+        "show_line_separator": false,
         "show_social": true,
-        "enable_country_selector": false,
+        "enable_country_selector": true,
         "enable_language_selector": false
       }
     },
@@ -53,10 +54,10 @@
         ".header-wrapper {background-color: transparent;}"
       ],
       "settings": {
-        "logo_position": "middle-center",
+        "logo_position": "middle-left",
         "mobile_logo_position": "center",
         "menu": "main-menu",
-        "menu_type_desktop": "mega",
+        "menu_type_desktop": "dropdown",
         "sticky_header_type": "reduce-logo-size",
         "show_line_separator": false,
         "color_scheme": "scheme-1",
