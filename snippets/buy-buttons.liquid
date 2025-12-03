@@ -12,9 +12,7 @@
 {% endcomment %}
 
 <style>
-.button--primary{
-background:red;
-}
+
 </style>
 
 <div {{ block.shopify_attributes }}>
@@ -101,6 +99,7 @@ background:red;
             {%- render 'loading-spinner' -%}
           </button>
           {%- if show_dynamic_checkout -%}
+            asd
             {{ form | payment_button }}
           {%- endif -%}
         </div>
