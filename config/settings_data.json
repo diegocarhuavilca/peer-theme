@@ -10,11 +10,11 @@
 {
   "current": {
     "logo": "shopify://shop_images/Peer.-cropped.svg",
-    "logo_width": 120,
+    "logo_width": 100,
     "favicon": "shopify://shop_images/PEER_favicon_bolsos_cuero.png",
     "type_header_font": "sans_serif_n4",
     "heading_scale": 150,
-    "type_body_font": "cormorant_n4",
+    "type_body_font": "sans_serif_n4",
     "body_scale": 105,
     "page_width": 1600,
     "spacing_sections": 20,
