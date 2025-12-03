@@ -61,6 +61,12 @@
     "collection_list_KdfYMG": {
       "type": "collection-list",
       "blocks": {
+        "featured_collection_DL8hdJ": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "sade-bags"
+          }
+        },
         "featured_collection_xqhtXH": {
           "type": "featured_collection",
           "settings": {
@@ -75,6 +81,7 @@
         }
       },
       "block_order": [
+        "featured_collection_DL8hdJ",
         "featured_collection_xqhtXH",
         "featured_collection_HzGPcC"
       ],
