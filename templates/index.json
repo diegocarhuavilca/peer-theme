@@ -79,7 +79,10 @@
         "featured_collection_rk98yw"
       ],
       "custom_css": [
-        "h2{font-size: 20px;}"
+        "h2 {font-size: 20px;}",
+        ".card__content {position: absolute; bottom: 0;}",
+        ".card__heading {color: white;}",
+        " .card__heading a {display: flex; justify-content: space-between; padding: 0 1em; }"
       ],
       "name": "t:sections.collection-list.presets.name",
       "settings": {
