@@ -17,14 +17,14 @@
         "announcement_ftTiX9": {
           "type": "announcement",
           "settings": {
-            "text": "Personalizalo | Envios a todo el Peru",
+            "text": "Envios a todo el Peru",
             "link": "https://api.whatsapp.com/send?phone=51989427138&text=Hola%20!%20Quisiera%20hacer%20un%20pedido%20personalizado%20en%20el%20modelo%20Sade"
           }
         },
         "announcement_UpNGgL": {
           "type": "announcement",
           "settings": {
-            "text": "Hasta 3 meses sin intereses | Envios a todo el Peru 🇵🇪",
+            "text": "Hasta 3 meses sin intereses",
             "link": "shopify://collections/sade-bags"
           }
         }
@@ -36,7 +36,7 @@
       "custom_css": [
         ".utility-bar {height: 40px;}",
         ".announcement-bar__message {font-size: 14px; font-weight: 600;}",
-        ".announcement-bar__message svg{display: none;}"
+        ".announcement-bar__message svg {display: none;}"
       ],
       "settings": {
         "auto_rotate": true,
