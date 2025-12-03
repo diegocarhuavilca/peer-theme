@@ -78,7 +78,9 @@
         "featured_collection_HzGPcC",
         "featured_collection_rk98yw"
       ],
-      "custom_css": [],
+      "custom_css": [
+        "h2{font-size: 20px;}"
+      ],
       "name": "t:sections.collection-list.presets.name",
       "settings": {
         "title": "<strong>ELIGE TU TAMAÑO PERFECTO:</strong>",
