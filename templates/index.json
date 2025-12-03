@@ -105,33 +105,35 @@
         "padding_bottom": 0
       }
     },
-    "176473137173a9381f": {
-      "type": "apps",
+    "rich_text_gTyr4Y": {
+      "type": "rich-text",
       "blocks": {
-        "instafeed_app_block_nL3dPq": {
-          "type": "shopify://apps/instafeed/blocks/app-block/c447db20-095d-4a10-9725-b5977662c9d5",
+        "heading_zVhLRH": {
+          "type": "heading",
           "settings": {
-            "title": "",
-            "title_color": "",
-            "title_size_v2": 0,
-            "alignment": "center",
-            "instafeed_margin_top": 60,
-            "instafeed_margin_bottom": 20,
-            "instafeed_margin_sides": 0,
-            "show_instagram_link": false,
-            "link_alignment": "left",
-            "link_color": "#000000",
-            "background_color": "",
-            "feed_id": "",
-            "html_area": ""
+            "heading": "<strong>Sigue a tu Peer en nuestras redes</strong>",
+            "heading_size": "h2"
+          }
+        },
+        "text_XBfbwc": {
+          "type": "text",
+          "settings": {
+            "text": "<p>★ El par hecho a tu medida ★</p>"
           }
         }
       },
       "block_order": [
-        "instafeed_app_block_nL3dPq"
+        "heading_zVhLRH",
+        "text_XBfbwc"
       ],
+      "name": "t:sections.rich-text.presets.name",
       "settings": {
-        "include_margins": true
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
       }
     }
   },
@@ -139,6 +141,6 @@
     "image_banner_xGBGmR",
     "featured_collection_Y8GRgm",
     "collection_list_KdfYMG",
-    "176473137173a9381f"
+    "rich_text_gTyr4Y"
   ]
 }
