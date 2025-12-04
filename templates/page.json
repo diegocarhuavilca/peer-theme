@@ -16,7 +16,8 @@
         ".subtitulo,.titulo {display: inline-block;}",
         ".titulo {font-weight: 600;}",
         ".body-1,.body-2 {max-width: 400px; margin: 1.5em auto;}",
-        ".title-lower{text-align: center; font-weight: 600;}"
+        ".title-lower {text-align: center; font-weight: 600;}",
+        ".arrow{border: none; }"
       ],
       "settings": {
         "padding_top": 28,
