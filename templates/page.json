@@ -12,7 +12,11 @@
     "main": {
       "type": "main-page",
       "custom_css": [
-        ".main-page-title{display: none;}"
+        ".main-page-title {display: none;}",
+        ".subtitulo,.titulo {display: inline-block;}",
+        ".titulo {font-weight: 600;}",
+        ".body-1,.body-2 {max-width: 400px; margin: 1.5em auto;}",
+        ".title-lower{text-align: center; font-weight: 600;}"
       ],
       "settings": {
         "padding_top": 28,
