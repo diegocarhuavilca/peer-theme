@@ -14,7 +14,7 @@
       "custom_css": [
         ".main-page-title {display: none;}",
         ".subtitulo,.titulo {display: inline-block;}",
-        ".titulo {font-weight: 600;}",
+        ".titulo {font-weight: 600; margin: 0;}",
         ".body-1,.body-2 {max-width: 400px; margin: 1.5em auto;}",
         ".title-lower {text-align: center; font-weight: 600;}",
         ".arrow {border: none;}",
