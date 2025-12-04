@@ -13,7 +13,7 @@
       "type": "image-banner",
       "name": "t:sections.image-banner.presets.name",
       "settings": {
-        "image": "shopify://shop_images/WhatsApp_Image_2025-12-02_at_9.29.43_PM.jpg",
+        "image": "shopify://shop_images/IMG_1881.jpg",
         "image_overlay_opacity": 40,
         "image_height": "medium",
         "image_behavior": "none",
