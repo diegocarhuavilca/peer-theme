@@ -18,7 +18,8 @@
         ".body-1,.body-2 {max-width: 400px; margin: 1.5em auto;}",
         ".title-lower {text-align: center; font-weight: 600;}",
         ".arrow {border: none;}",
-        " .image-1,.image-2,.image-3{border: none; }"
+        ".image-1,.image-2,.image-3 {border: none; width: 250px; position: absolute;}",
+        ".image-2 {left: -90px; top: 80px;}"
       ],
       "settings": {
         "padding_top": 28,
