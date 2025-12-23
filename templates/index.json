@@ -62,29 +62,15 @@
     "collection_list_KdfYMG": {
       "type": "collection-list",
       "blocks": {
-        "featured_collection_DL8hdJ": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "sade-bags"
-          }
-        },
         "featured_collection_xqhtXH": {
           "type": "featured_collection",
           "settings": {
             "collection": "large"
           }
-        },
-        "featured_collection_HzGPcC": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "pequenos"
-          }
         }
       },
       "block_order": [
-        "featured_collection_DL8hdJ",
-        "featured_collection_xqhtXH",
-        "featured_collection_HzGPcC"
+        "featured_collection_xqhtXH"
       ],
       "custom_css": [
         "h2 {font-size: 20px;}",
